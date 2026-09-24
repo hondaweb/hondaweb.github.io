@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="ECサイト運用・Web制作ポートフォリオ" />
-  <title>あなたの名前｜Web制作・EC運用</title>
+  <meta name="description" content="Web・ECサイト運用経験を持つWeb制作者。Webデザイン、LP・特集ページ制作、HTML/CSSコーディング、WordPress、ECサイト運用まで幅広く対応しています。" />
+  <title>ほんだウェブ｜Web制作・EC運用</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
     :root { --ink:#121212; --muted:#686867; --line:#deded9; --paper:#f5f4ef; --accent:#ddff3f; --card:#e8e8e1; }
@@ -13,27 +13,31 @@
     body { margin:0; background:var(--paper); color:var(--ink); font-family:Manrope,'Noto Sans JP',sans-serif; line-height:1.7; }
     a { color:inherit; text-decoration:none; }
     .wrap { max-width:1220px; margin:auto; padding:0 34px; }
-    header { border-bottom:1px solid var(--line); }
-    nav { height:82px; display:flex; align-items:center; justify-content:space-between; }
+    header { border-bottom:1px solid rgba(18,18,18,.14); position:relative; z-index:1; }
+    nav { height:82px; display:flex; align-items:center; justify-content:space-between; animation:fadeDown .8s .1s both; }
     .brand { font-size:13px; font-weight:700; letter-spacing:.03em; }
     .navlinks { display:flex; gap:24px; font-family:'DM Mono',monospace; font-size:11px; }
-    .hero { min-height:690px; display:flex; flex-direction:column; justify-content:space-between; padding:84px 0 48px; }
+    .hero { min-height:720px; display:flex; flex-direction:column; justify-content:space-between; padding:86px 0 52px; position:relative; overflow:hidden; }
+    .hero::before { content:''; position:absolute; z-index:-2; inset:0 calc(50% - 50vw); background-image:radial-gradient(circle at 84% 27%, rgba(215,255,63,.97) 0 2.4%, transparent 2.55%), radial-gradient(circle at 76% 61%, rgba(218,219,211,.88) 0 12%, transparent 30%), linear-gradient(122deg, transparent 0 57%, rgba(30,30,29,.1) 57.1% 57.25%, transparent 57.35%), linear-gradient(90deg, rgba(18,18,18,.045) 1px, transparent 1px), linear-gradient(0deg, rgba(18,18,18,.045) 1px, transparent 1px), linear-gradient(135deg, #f8f7f1 0%, #efeee7 55%, #d9dbd2 100%); background-size:auto,auto,auto,34px 34px,34px 34px,auto; background-position:center; animation:gridDrift 18s ease-in-out infinite alternate; }
+    .hero::after { content:''; position:absolute; z-index:-1; width:min(46vw,560px); aspect-ratio:1; right:-5%; top:12%; border:1px solid rgba(18,18,18,.24); border-radius:50%; box-shadow:inset 0 0 0 38px rgba(245,244,239,.2), 0 0 0 1px rgba(245,244,239,.4); animation:orbitalFloat 8s ease-in-out infinite; }
     .eyebrow, .label { font:500 11px 'DM Mono',monospace; letter-spacing:.09em; text-transform:uppercase; }
     .eyebrow { display:flex; align-items:center; gap:10px; }
     .eyebrow:before { content:''; width:28px; height:1px; background:currentColor; }
-    h1 { max-width:1080px; margin:36px 0 44px; font-size:clamp(43px,7.1vw,94px); font-weight:600; letter-spacing:-.065em; line-height:1.13; }
+    h1 { max-width:1080px; margin:36px 0 44px; font-size:clamp(43px,7.1vw,94px); font-weight:600; letter-spacing:-.075em; line-height:1.13; }
     h1 em { font-style:normal; background:var(--accent); padding:0 .09em; }
-    .hero-bottom { display:grid; grid-template-columns:1.2fr .8fr; gap:38px; align-items:end; }
-    .intro { max-width:600px; font-size:18px; line-height:1.95; }
+    .hero > div:first-child .eyebrow { animation:fadeUp .75s .25s both; }
+    .hero h1 { animation:headlineIn 1s cubic-bezier(.16,1,.3,1) .36s both; }
+    .hero-bottom { display:grid; grid-template-columns:1.2fr .8fr; gap:38px; align-items:end; animation:fadeUp .9s .68s both; }
+    .intro { max-width:590px; font-size:17px; line-height:2; }
     .hero-meta { display:grid; grid-template-columns:1fr 1fr; border-top:1px solid var(--ink); font:11px 'DM Mono',monospace; }
     .hero-meta div { padding:13px 0; border-bottom:1px solid var(--line); }
     .hero-meta div:nth-child(even) { text-align:right; }
-    section { padding:112px 0; border-top:1px solid var(--line); }
+    section { padding:120px 0; border-top:1px solid var(--line); }
     .section-head { display:grid; grid-template-columns:1fr 2fr; margin-bottom:52px; }
     h2 { margin:0; font-size:clamp(30px,4vw,52px); letter-spacing:-.06em; line-height:1.12; }
     .section-note { margin:4px 0 0; max-width:520px; color:var(--muted); font-size:15px; }
-    .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-    .project { background:var(--card); min-height:470px; padding:23px; display:flex; flex-direction:column; justify-content:space-between; transition:transform .3s ease, background .3s; }
+    .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .project { background:var(--card); min-height:480px; padding:23px; display:flex; flex-direction:column; justify-content:space-between; transition:transform .3s ease, background .3s; }
     .project:hover { transform:translateY(-7px); background:#e0e0d8; }
     .visual { height:253px; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
     .visual::after { content:''; position:absolute; inset:0; background:repeating-linear-gradient(90deg, transparent 0 10px, rgba(255,255,255,.17) 10px 11px); }
@@ -51,13 +55,16 @@
     .experience { border-top:1px solid var(--ink); } .role { display:grid; grid-template-columns:150px 1.1fr 2fr; gap:20px; padding:22px 0; border-bottom:1px solid var(--line); } .date { font:11px 'DM Mono',monospace; } .role h3 { margin:0; font-size:15px; line-height:1.5; } .role p { margin:0; color:var(--muted); font-size:13px; }
     .service-grid { display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--ink); } .service { display:flex; gap:18px; padding:22px 20px 25px 0; border-bottom:1px solid var(--line); } .service:nth-child(even) { padding-left:20px; border-left:1px solid var(--line); } .service-no { font:11px 'DM Mono',monospace; color:var(--muted); } .service h3 { margin:0 0 5px; font-size:17px; letter-spacing:-.03em; } .service p { margin:0; color:var(--muted); font-size:13px; }
     .credentials { display:grid; grid-template-columns:1fr 2fr; gap:30px; padding-top:50px; } .credentials h3 { margin:0; font-size:14px; } .credential-list { display:flex; flex-wrap:wrap; gap:8px; } .credential-list span { padding:7px 11px; border:1px solid #aaa; border-radius:20px; font-size:12px; }
-    .cta { background:var(--ink); color:var(--paper); } .cta .wrap { min-height:435px; display:flex; flex-direction:column; justify-content:space-between; } .cta h2 { max-width:900px; font-size:clamp(42px,6.7vw,80px); } .cta h2 a { border-bottom:2px solid var(--accent); } .cta-small { display:flex; justify-content:space-between; color:#aaa; font:11px 'DM Mono',monospace; }
-    footer { padding:18px 0; font:10px 'DM Mono',monospace; color:#aaa; background:var(--ink); }
-    @media (max-width:720px) { .wrap { padding:0 20px; } nav { height:65px; } .navlinks { gap:12px; font-size:10px; } .hero { min-height:650px; padding:66px 0 35px; } .hero-bottom,.section-head,.credentials { grid-template-columns:1fr; gap:20px; } h1 { margin-top:28px; } section { padding:72px 0; } .work-grid { grid-template-columns:1fr; } .project { min-height:420px; } .skills { grid-template-columns:1fr; } .skill,.skill:nth-child(3n+2),.skill:nth-child(3n+3),.service:nth-child(even) { padding-left:0; border-left:0; } .role { grid-template-columns:1fr; gap:5px; } .service-grid { grid-template-columns:1fr; } .cta .wrap { min-height:360px; } }
+    .cta { background-color:var(--ink); color:var(--paper); position:relative; overflow:hidden; background-image:radial-gradient(circle at 83% 42%, rgba(221,255,63,.92) 0 2px, transparent 2.5px), radial-gradient(circle at 84% 42%, transparent 0 126px, rgba(221,255,63,.38) 126px 127px, transparent 128px), radial-gradient(circle at 84% 42%, transparent 0 210px, rgba(255,255,255,.15) 210px 211px, transparent 212px), linear-gradient(135deg, transparent 0 69%, rgba(255,255,255,.1) 69.05% 69.12%, transparent 69.2%), repeating-linear-gradient(90deg, transparent 0 49px, rgba(255,255,255,.035) 50px); } .cta .wrap { min-height:460px; display:flex; flex-direction:column; justify-content:space-between; position:relative; z-index:1; } .cta h2 { max-width:970px; font-size:clamp(42px,6.7vw,80px); } .cta h2 a { border-bottom:2px solid var(--accent); } .cta-small { display:flex; justify-content:space-between; color:#aaa; font:11px 'DM Mono',monospace; }
+    footer { padding:19px 0; font:10px 'DM Mono',monospace; color:#aaa; background-color:var(--ink); background-image:linear-gradient(90deg, rgba(221,255,63,.6) 0 38px, transparent 38px), repeating-linear-gradient(90deg, transparent 0 48px, rgba(255,255,255,.055) 49px 50px); background-position:left top, center; background-repeat:no-repeat, repeat; }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .75s ease, transform .75s cubic-bezier(.16,1,.3,1); } .reveal.is-visible { opacity:1; transform:none; } .reveal .project, .reveal .service, .reveal .skill, .reveal .role { transition-delay:calc(var(--order, 0) * 70ms); } .reveal.is-visible .project, .reveal.is-visible .service, .reveal.is-visible .skill, .reveal.is-visible .role { animation:fadeUp .7s both; animation-delay:calc(var(--order, 0) * 75ms); }
+    @keyframes fadeDown { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:none; } } @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:none; } } @keyframes headlineIn { from { opacity:0; transform:translateY(34px); filter:blur(7px); } to { opacity:1; transform:none; filter:blur(0); } } @keyframes gridDrift { from { background-position:center, center, center, 0 0, 0 0, center; } to { background-position:center, center, center, 34px 0, 0 34px, center; } } @keyframes orbitalFloat { 0%,100% { transform:translate3d(0,0,0) rotate(0); } 50% { transform:translate3d(-16px,14px,0) rotate(5deg); } }
+    @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; } }
+    @media (max-width:720px) { .wrap { padding:0 20px; } nav { height:65px; } .navlinks { gap:12px; font-size:10px; } .hero { min-height:650px; padding:66px 0 35px; } .hero::before { background-size:auto,auto,auto,26px 26px,26px 26px,auto; } .hero::after { width:83vw; right:-22%; top:17%; } .hero-bottom,.section-head,.credentials { grid-template-columns:1fr; gap:20px; } h1 { margin-top:28px; } section { padding:78px 0; } .work-grid { grid-template-columns:1fr; } .project { min-height:420px; } .skills { grid-template-columns:1fr; } .skill,.skill:nth-child(3n+2),.skill:nth-child(3n+3),.service:nth-child(even) { padding-left:0; border-left:0; } .role { grid-template-columns:1fr; gap:5px; } .service-grid { grid-template-columns:1fr; } .cta .wrap { min-height:380px; } }
   </style>
 </head>
 <body>
-  <header><div class="wrap"><nav><a class="brand" href="#top">あなたの名前 / WEB制作・EC運用</a><div class="navlinks"><a href="#service">サービス</a><a href="#work">実績</a><a href="#about">経歴</a><a href="#contact">お問い合わせ</a></div></nav></div></header>
+  <header><div class="wrap"><nav><a class="brand" href="#top">ほんだウェブ / WEB制作・EC運用</a><div class="navlinks"><a href="#service">サービス</a><a href="#work">実績</a><a href="#about">経歴</a><a href="#contact">お問い合わせ</a></div></nav></div></header>
   <main id="top">
     <div class="wrap hero">
       <div><p class="eyebrow">WEB PRODUCTION / EC SUPPORT</p><h1>成果につながるWebを、<br><em>速く、正確に。</em></h1></div>
@@ -70,10 +77,22 @@
         <article class="project"><div><div class="visual b"><i></i><b></b><span>NEW<br>GEAR</span></div><p class="project-type">02 / FEATURE PAGE</p><h3>複雑な仕様を読み解く<br>商品特集ページ</h3><p>紙・テキストベースの要件から、情報設計、レイアウト、コーディングまで対応。</p></div><div class="tags"><span class="tag">DIRECTION</span><span class="tag">RESPONSIVE</span><span class="tag">SITECORE</span></div></article>
         <article class="project"><div><div class="visual c"><i></i><b></b><span>SOUND<br>SELECT</span></div><p class="project-type">03 / EC OPERATION</p><h3>日々の運用を支える<br>更新・改善の仕組み化</h3><p>商品・特集・キャンペーンの更新を、複数モールを含む運用フローのなかで確実に実行。</p></div><div class="tags"><span class="tag">EC OPERATION</span><span class="tag">GA4</span><span class="tag">SEO</span></div></article>
       </div></div></section>
-    <section id="about"><div class="wrap"><div class="section-head"><p class="label">Skills & Trust</p><div><h2>つくるだけで終わらない<br>実務型のWeb制作。</h2></div></div><div class="skills"><div class="skill"><h3>EC / 販促ページ</h3><p>LP、特集、キャンペーン、商品ページ。購買導線を意識して制作します。</p></div><div class="skill"><h3>デザイン・画像制作</h3><p>Photoshop / Illustrator / Canva。バナー・商品画像・ページレイアウトに対応。</p></div><div class="skill"><h3>HTML / CSS実装</h3><p>HTML、CSS、JavaScript、PHP。既存修正からゼロベースのページ制作まで対応。</p></div><div class="skill"><h3>CMS / WordPress</h3><p>WordPress、SITECORE、ショップサーブ等での更新・公開経験があります。</p></div><div class="skill"><h3>分析・改善</h3><p>GA4を用いたページ実績の確認、SEO施策、売上分析・広告運用の経験。</p></div><div class="skill"><h3>対応範囲</h3><p>デザイン → コーディング → 公開まで、一人で完結する制作が可能です。</p></div></div><div class="credentials"><h3>保有資格</h3><div class="credential-list"><span>ウェブデザイン技能士 2級</span><span>色彩検定 2級</span><span>統計検定 2級</span><span>情報セキュリティマネジメント</span><span>日商簿記 2級</span><span>FP技能士 2級</span></div></div></div></section>
+    <section id="about"><div class="wrap"><div class="section-head"><p class="label">Skills & Trust</p><div><h2>つくるだけで終わらない<br>実務型のWeb制作。</h2></div></div><div class="skills"><div class="skill"><h3>EC / 販促ページ</h3><p>LP、特集、キャンペーン、商品ページ。購買導線を意識して制作します。</p></div><div class="skill"><h3>デザイン・画像制作</h3><p>Photoshop / Illustrator / Canva。バナー・商品画像・ページレイアウトに対応。</p></div><div class="skill"><h3>HTML / CSS実装</h3><p>HTML、CSS、JavaScript、PHP。既存修正からゼロベースのページ制作まで対応。</p></div><div class="skill"><h3>CMS / WordPress</h3><p>WordPress、SITECORE、ショップサーブ等での更新・公開経験があります。</p></div><div class="skill"><h3>分析・改善</h3><p>GA4を用いたページ実績の確認、SEO施策、売上分析・広告運用の経験。</p></div><div class="skill"><h3>対応範囲</h3><p>デザイン → コーディング → 公開まで、一人で完結する制作が可能です。</p></div></div><div class="credentials"><h3>保有資格</h3><div class="credential-list"><span>ウェブデザイン技能士 2級</span><span>色彩検定 2級</span><span>統計検定 2級</span><span>日商簿記 2級</span><span>FP技能士 2級</span><span>情報セキュリティマネジメント</span></div></div></div></section>
     <section><div class="wrap"><div class="section-head"><p class="label">Career</p><div><h2>WebとECを、<br>継続的に運用してきた経験。</h2></div></div><div class="experience"><div class="role"><div class="date">2022.07 — NOW</div><h3>音楽商材小売会社<br>ECサイト運営</h3><p>自社サイト・Yahoo!・dショッピングの運用。新規ページのレイアウト／デザイン／コーディング、既存ページ更新、GA4での実績抽出を担当。</p></div><div class="role"><div class="date">2020.06 — 2022.07</div><h3>洋菓子製造・販売会社<br>ECサイト運営</h3><p>商品登録、商品画像加工、バナー、LP・特集・キャンペーンページ制作、ショップサーブ・楽天・Yahoo!・Amazonの運用、分析・SEO・広告運用を担当。</p></div><div class="role"><div class="date">2016.04 — 2019.03</div><h3>株式会社アクラス<br>Webサイト運用・更新</h3><p>4サイトの運用に携わり、HTML/CSSでの更新・修正、新規ページ作成、WordPress操作、SEO対策、Google Analyticsによる分析を担当。</p></div></div></div></section>
-    <section class="cta" id="contact"><div class="wrap"><p class="label">Contact</p><h2>更新作業から<br>LP・ホームページ制作まで。<br><a href="mailto:your-email@example.com">お気軽にご相談ください。</a></h2><div class="cta-small"><span>リモート案件を中心に対応しています</span><span>© 2026 あなたの名前</span></div></div></section>
+    <section class="cta" id="contact"><div class="wrap"><p class="label">Contact</p><h2>更新作業から<br>LP・ホームページ制作まで。<br><a href="mailto:your-email@example.com">お気軽にご相談ください。</a></h2><div class="cta-small"><span>リモート案件を中心に対応しています</span><span>© 2026 ほんだウェブ</span></div></div></section>
   </main>
   <footer><div class="wrap">あなたの名前 / WEB制作・EC運用</div></footer>
+  <script>
+    const revealTargets = [
+      document.querySelector('#service'), document.querySelector('#work'),
+      document.querySelector('#about'), document.querySelector('#contact'),
+      ...document.querySelectorAll('section:not([id])')
+    ];
+    document.querySelectorAll('.project, .service, .skill, .role').forEach((item, index) => item.style.setProperty('--order', index % 6));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealTargets.filter(Boolean).forEach((section) => { section.classList.add('reveal'); observer.observe(section); });
+  </script>
 </body>
 </html>

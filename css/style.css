@@ -208,7 +208,7 @@ h1 {
     .mark-deco {
         width: min(60%, 250px);
         top: 48%;
-        left: 55%;
+        left: 57%;
         transform: translate(-50%, -50%);
     }
     .mark-deco-plus {
@@ -216,7 +216,7 @@ h1 {
         z-index: -1;
         position: absolute;
         top: 42%;
-        left: 40%;
+        left: 39%;
         transform: translate(-50%, -50%);
         width: min(50%, 200px);
         aspect-ratio: 4 / 3;

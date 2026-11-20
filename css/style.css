@@ -207,8 +207,8 @@ h1 {
     }
     .mark-deco {
         width: min(60%, 250px);
-        top: 47%;
-        left: 55%;
+        top: 48%;
+        left: 56%;
         transform: translate(-50%, -50%);
     }
     .mark-deco-plus {

@@ -63,7 +63,7 @@ body {
 h1 {
     margin: 0;
     font-family: var(--serif);
-    font-size: clamp(2.3rem, 2.7vw, 2.7rem);
+    font-size: clamp(2.1rem, 2.2vw, 2.3rem);
     font-weight: 400;
     letter-spacing: 0.06em;
     line-height: 1.05;
@@ -71,7 +71,7 @@ h1 {
 .role {
     margin: 0.5rem 0 0;
     font-family: var(--serif);
-    font-size: clamp(1.1rem, 1.5vw, 1.28rem);
+    font-size: clamp(1.1rem, 1.5vw, 1.2rem);
     letter-spacing: 0.12em;
     line-height: 1.7;
 }
@@ -98,7 +98,7 @@ h1 {
     /* background: linear-gradient(145deg, #dedbd4, #c9c4bb); */
     background: url(../images/profile.jpg);
     /* filter: grayscale(100%); */
-    filter: opacity(0.9);
+    filter: opacity(0.8);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -181,7 +181,7 @@ h1 {
         display: block;
     }
     h1 {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
     .profile-card {
         width: min(100% - 32px, 480px);

@@ -211,7 +211,7 @@ h1 {
         left: 56%;
         transform: translate(-50%, -50%);
         background: radial-gradient(circle at 18% 12%, rgba(194, 171, 156, 0.14), transparent 28rem), radial-gradient(circle at 84% 90%, rgba(210, 204, 185, 0.20), transparent 30rem), var(--accent);
-        filter: opacity(0.3);
+        filter: opacity(0.2);
     }
     .mark-deco-plus {
         display: unset;

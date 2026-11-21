@@ -98,7 +98,7 @@ h1 {
     /* background: linear-gradient(145deg, #dedbd4, #c9c4bb); */
     background: url(../images/profile.jpg);
     /* filter: grayscale(100%); */
-    filter: opacity(0.8);
+    filter: opacity(0.9);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

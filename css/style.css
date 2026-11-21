@@ -206,9 +206,9 @@ h1 {
         background-position: center calc(50% - 3px);
     }
     .mark-deco {
-        width: min(60%, 250px);
-        top: 47.5%;
-        left: 56%;
+        width: min(60%, 255px);
+        top: 47%;
+        left: 55.5%;
         transform: translate(-50%, -50%);
     }
     .mark-deco-plus {

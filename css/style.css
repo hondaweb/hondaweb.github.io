@@ -208,23 +208,25 @@ h1 {
     .mark-deco {
         width: min(60%, 250px);
         top: 48%;
-        left: 56%;
+        left: 58%;
         transform: translate(-50%, -50%);
+        background: radial-gradient(circle at 18% 12%, rgba(194, 171, 156, 0.14), transparent 28rem), radial-gradient(circle at 84% 90%, rgba(210, 204, 185, 0.20), transparent 30rem), var(--accent);
+        filter: opacity(0.3);
     }
     .mark-deco-plus {
         display: unset;
         z-index: -1;
         position: absolute;
         top: 42%;
-        left: 39%;
+        left: 38%;
         transform: translate(-50%, -50%);
         width: min(50%, 200px);
         aspect-ratio: 4 / 3;
         justify-self: center;
         margin-inline: auto;
         overflow: hidden;
-        background: radial-gradient(circle at 18% 12%, rgba(194, 171, 156, 0.14), transparent 28rem), radial-gradient(circle at 84% 90%, rgba(210, 204, 185, 0.20), transparent 30rem), var(--accent);
-        filter: opacity(0.3);
+        background: radial-gradient(circle at 18% 12%, rgba(194, 171, 156, 0.14), transparent 28rem), radial-gradient(circle at 84% 90%, rgba(210, 204, 185, 0.20), transparent 30rem), var(--background);
+        filter: opacity(0.7);
     }
     .details {
         text-align: center;
